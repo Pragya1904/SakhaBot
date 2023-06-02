@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
+
 class Messages extends StatefulWidget {
   final List messages;
 
@@ -41,8 +43,8 @@ class _MessagesState extends State<Messages> {
                               : 0),
                     ),
                     color:  widget.messages[index]['isUserMessage']
-                        ? Color(0xff2877ef)
-                        : Color(0xff232b3f),),
+                        ? userMsgBubbleColor
+                        : botMsgBubbleColor,),
                   child: Text(widget.messages[index]['message'].text.text[0],softWrap: true,maxLines: 20,))
             ]
         ),

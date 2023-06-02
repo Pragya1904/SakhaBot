@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:chatbot/home_page.dart';
+
+import 'constants.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -10,12 +12,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+
     return MaterialApp(
       title: 'SakhaBot',
       theme: ThemeData(
-          appBarTheme: AppBarTheme(backgroundColor: Color(0xff262933)),
+          appBarTheme: AppBarTheme(backgroundColor: appBarThemeColor),
           brightness: Brightness.dark,
-          scaffoldBackgroundColor: Color(0xff191e2e)
+          scaffoldBackgroundColor: scaffoldBgColor
 
       ),
       initialRoute: HomePage.id,

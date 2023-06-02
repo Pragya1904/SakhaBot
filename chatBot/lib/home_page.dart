@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 
+import 'constants.dart';
 import 'messages_page.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double height=MediaQuery.of(context).size.height;
     double width=MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Sakha - Ur true Buddy"),
@@ -31,24 +33,24 @@ class _HomePageState extends State<HomePage> {
           children: [
             Expanded(child: Messages(messages:messages)),
             Container(
-              color:Color(0xff1f2432) ,
+              color:bottomContainerBgColor ,
               padding: EdgeInsets.symmetric(horizontal:width*0.005,vertical: height*0.02),
               child: Row(
                 children: [
                   Expanded(child: Container(
                     padding: EdgeInsets.symmetric(horizontal: width*0.02,vertical: height*0.002),
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),color:  Color(0xff0f141e),),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(25),color:  textFieldBgColor,),
                     //Color(0xff2877ef),
                     child: TextFormField(
                       controller: _controller,
                       decoration: InputDecoration(hintText: "Enter your message",border: InputBorder.none),
-                      style: TextStyle(color: Colors.white,),
+                      style: TextStyle(color: textFieldTextColor,),
                     ),
                   )),
                   IconButton(onPressed: (){
                     sendMessage(_controller.text);
                     _controller.clear();
-                  }, icon: const Icon(Icons.send,color: Color(0xff90948d),),)
+                  }, icon: const Icon(Icons.send,color: iconColor,),)
                 ],
               ),
 
