@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'SakhaBot',
       theme: ThemeData(
-        brightness: Brightness.dark,
+          appBarTheme: AppBarTheme(backgroundColor: Color(0xff262933)),
+          brightness: Brightness.dark,
+          scaffoldBackgroundColor: Color(0xff191e2e)
+
       ),
       initialRoute: HomePage.id,
       routes:{
@@ -22,5 +25,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 
